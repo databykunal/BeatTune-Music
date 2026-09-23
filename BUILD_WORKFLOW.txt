@@ -1,0 +1,7 @@
+BeatTune build workflow
+
+GitHub Actions uses Java 17 and Gradle 8.2. The project intentionally has no Gradle wrapper.
+Workflow: .github/workflows/build.yml
+Artifact: app-debug.apk
+
+This revision includes the BeatTune visual redesign, first-launch name setup, and network startup optimization.

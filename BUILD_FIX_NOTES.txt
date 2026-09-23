@@ -1,0 +1,13 @@
+Build fix v4.2: resolved all six Kotlin compiler errors from Actions run 30fed7537a0ef3e3c28ff39567ecbe7ce0f5796d.
+- DirectYouTubeProvider RequestBody API
+- SongCandidate -> Song mapping in YouTubeMusicApi
+- MediaController hasNext/hasPrevious invocation syntax
+- setup-java v5 warning cleanup
+
+V7.1 PLAYBACK QUEUE FIX
+- Fixed logical queue ordering when previous/next/next+2 streams resolve concurrently.
+- Media3 items are now inserted according to their logical queue position rather than network completion order.
+- Next/Previous buttons now target the logical BeatTune queue directly instead of trusting Media3's current adjacent item.
+- This prevents wrong-track skips and improves continuous autoplay/queue behavior.
+
+V7.1.1 build-log fix: SearchScreen.kt was missing androidx.compose.ui.graphics.Color import. Added it so Color.Transparent resolves during Kotlin compilation.
