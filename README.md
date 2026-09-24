@@ -1,6 +1,6 @@
 # BeatTune Music
 
-Sonify is a clean, dark Android music player built with Kotlin + Jetpack Compose + Media3.
+BeatTune is a clean, dark Android music player built with Kotlin + Jetpack Compose + Media3.
 
 ## Current app flow
 
