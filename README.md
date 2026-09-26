@@ -1,63 +1,99 @@
-# BeatTune Music
+# BeatTune 🎧
 
-BeatTune is a clean, dark Android music player built with Kotlin + Jetpack Compose + Media3.
+BeatTune is a modern Android music player built with Kotlin and Jetpack Compose.
 
-## Current app flow
+It is designed to provide a clean, smooth and simple music listening experience with features like search, playlists, favorites, queue and background playback.
 
-- Home with music categories and fresh picks
-- Debounced music search with cancellation/race protection
-- Favorites stored locally with Room
-- Mini-player and full now-playing screen
-- Play / pause / seek / previous / next
-- Shuffle + repeat controls
-- Background playback through MediaSessionService
-- Robust loading, empty and error states
-- Piped instance discovery with fallback instances
-- Artwork loaded through Coil
+## ✨ Features
 
-## Architecture
+- 🎵 Music search and playback
+- 🔎 Fast and responsive search
+- ❤️ Favorites
+- 📂 Create and manage playlists
+- 🕘 Recently played songs
+- ▶️ Autoplay
+- ⏭️ Next / Previous song
+- 🔀 Shuffle
+- 🔁 Repeat
+- 📋 Playback queue
+- 🎧 Mini player
+- 🎶 Full-screen music player
+- 🔔 Background playback and media notification controls
+- 🏠 Music categories on the home screen
+- 👤 Personalised home screen with first-launch name setup
+- 🌙 Premium dark UI
+- 🖼️ Album artwork
+- ⚡ Playback caching and preloading for smoother transitions
 
-```text
-Compose UI
-   ↓
-MainViewModel ──→ YouTubeMusicApi ──→ Piped instances
-   │
-   └────────────→ Room / Favorites
+## 🛠️ Built With
 
-Compose Player UI
-   ↓
-MusicPlaybackController
-   ↓
-MediaController
-   ↓
-MusicPlaybackService
-   ↓
-Media3 / ExoPlayer
-```
+- Kotlin
+- Jetpack Compose
+- Media3 / ExoPlayer
+- Room Database
+- Hilt
+- Ktor
+- Coil
+- NewPipe Extractor
 
-The app does not upload music files or require a backend owned by Sonify. Search and stream URLs are resolved through publicly available Piped API instances. Because these instances are community-hosted, the app discovers current instances and falls back when one is unavailable.
+## 🎵 Playback
 
-## Build
+BeatTune uses direct YouTube stream extraction as its primary playback method, with public Piped instances available as a fallback.
 
-The GitHub Actions workflow uses Java 17 and Gradle 8.2 to build the debug APK.
+The app also uses stream caching, retry handling and preloading of upcoming songs to improve playback reliability.
 
-## Notes
+Since BeatTune relies on external services for music search and stream resolution, their availability can affect playback and search results.
 
-Sonify is inspired by modern music-player UX patterns such as a persistent mini-player, a focused now-playing screen and library-first navigation. It is an independent project and is not affiliated with SimpMusic, YouTube, or Google.
+## 📚 Library
 
+Your music library is stored locally on your device.
 
-## Playback architecture
+You can:
 
-Sonify now uses a direct YouTube extraction provider as the primary playback path. Public Piped instances are retained only as a fallback, so playback is no longer dependent on one community-hosted Piped server. Stream URLs are fetched immediately before playback, Media3 uses a dedicated HTTP data source, and playback errors trigger one fresh-source retry.
+- Save songs to Favorites
+- Create playlists
+- Add songs to playlists
+- Remove songs from playlists
+- View recently played songs
+- Play songs directly from your library
 
-See `DIRECT_PLAYBACK_NOTICE.md` for the NewPipe Extractor licensing notice.
+## 🔒 Privacy
 
+BeatTune does not require an account or subscription.
 
-## V7 Premium UI update
-- Refined BeatTune palette: deep navy surfaces with restrained violet/blue accents.
-- Reduced saturated gradients and glow-heavy elements for a calmer premium look.
-- Launcher icon uses the same restrained BeatTune palette.
-- Network timeouts/fallback limits were tightened to reduce unnecessary waiting on unhealthy providers.
+Favorites, playlists and recently played data are stored locally on your device.
+
+BeatTune does not upload your personal music library to a project-owned backend.
+
+Music search and playback may communicate with third-party services required to provide these features.
+
+## 🎨 Design
+
+BeatTune uses a premium dark interface with:
+
+- Deep navy backgrounds
+- Violet and blue accents
+- Subtle pink highlights
+- Clean cards and controls
+- Persistent mini player
+- Modern bottom navigation
+- Focused now-playing experience
+
+The goal is to keep the interface modern and premium without excessive visual effects.
+
+## 🚀 Build
+
+The project uses:
+
+- Kotlin
+- Gradle
+- Android Gradle Plugin
+- Java 17
+- Jetpack Compose
+
+GitHub Actions is included to build the Android APK automatically.
+
+To build locally:
 ⚠️ Disclaimer
 
 BeatTune is an independent open-source project.
@@ -81,5 +117,6 @@ BeatTune is released under the MIT License.
 See LICENSE for the full license.
 
 Made with Kotlin & Jetpack Compose 🎧
-- First-launch display-name onboarding remains local-only
-- and user-editable.
+
+```bash
+./gradlew assembleDebug
