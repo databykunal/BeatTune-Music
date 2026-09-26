@@ -58,4 +58,28 @@ See `DIRECT_PLAYBACK_NOTICE.md` for the NewPipe Extractor licensing notice.
 - Reduced saturated gradients and glow-heavy elements for a calmer premium look.
 - Launcher icon uses the same restrained BeatTune palette.
 - Network timeouts/fallback limits were tightened to reduce unnecessary waiting on unhealthy providers.
-- First-launch display-name onboarding remains local-only and user-editable.
+⚠️ Disclaimer
+
+BeatTune is an independent open-source project.
+
+It is not affiliated with YouTube, Google, SimpMusic, Piped, or NewPipe.
+
+BeatTune relies on third-party services and libraries for search and stream resolution. These services may change or become unavailable at any time.
+
+See DIRECT_PLAYBACK_NOTICE.md for information regarding NewPipe Extractor licensing.
+
+🤝 Contributing
+
+Contributions, suggestions and bug reports are welcome.
+
+If you find a bug or want to improve BeatTune, feel free to open an issue or submit a pull request.
+
+📄 License
+
+BeatTune is released under the MIT License.
+
+See LICENSE for the full license.
+
+Made with Kotlin & Jetpack Compose 🎧
+- First-launch display-name onboarding remains local-only
+- and user-editable.
